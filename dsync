@@ -8,9 +8,6 @@ import filecmp
 def usage():
     return """
 Pyrobocopy: Command line directory diff, synchronization, update & copy
-
-Author: Anand Pillai
-
 Usage: %s <sourcedir> <targetdir> Options
 
 Main Options:\n
