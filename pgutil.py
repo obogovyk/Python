@@ -5,10 +5,6 @@
 PGUtil v0.1.21
 Simple, but strong password generator utility.
 
-This program comes with ABSOLUTELY NO WARRANTY; for details type `pgutil --help'.
-This is free software, and you are welcome to redistribute it
-under certain conditions.
-
 Copyright(C) 2015 Bogovyk Oleksandr <obogovyk@gmail.com>
 '''
 
