@@ -1,6 +1,11 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
+# OpenCart currency updater script using PrivatBank API.
+# This script updates currency values and wtite them to MySQL `oc_currency` table.
+
+# Author: Oleksandr Bogovyk <obogovyk@gmail.com>
+
 import mysql.connector
 from mysql.connector import errorcode
 import sys
