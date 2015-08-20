@@ -28,10 +28,12 @@ def isInternetOn():
 
 ''' TODO: Добавить цикл с валютами! '''
 def getValue(currency):
+  # for i in curr_code
     if(currency == 'RUR'):
         link = urllib2.urlopen('https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5')
         data = json.load(link)
         value = json.dumps(data[0]["sale"], separators=(',', ': ')).strip('"')
+        # add buy also
         return value
     elif(currency == 'EUR'):
         link = urllib2.urlopen('https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5')
@@ -82,7 +84,8 @@ def updateCurrency(currency, value):
 if __name__ == "__main__":
     if(isInternetOn() == True):
         print(getValue(currency))
+        # Add values to MySQL DB Currency Table
     else:
-        print('Network connection error!')
+        print(' Error! Please check your network connection.')
     sys.exit(1)
     
