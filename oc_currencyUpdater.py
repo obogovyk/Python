@@ -7,8 +7,9 @@ import sys
 import urllib2
 import json
 
-''' currencies = {0:'RUR', 1:'EUR', 2:'USD'} '''
-''' currencies = [] '''
+''' curr_code = ['RUR','EUR','USD'] '''
+''' curr_sell = {} '''
+''' curr_buy = {} '''
 
 config = {
   'user': 'root',
@@ -18,7 +19,7 @@ config = {
   'raise_on_warnings': True
 }
 
-def internetOn():
+def isInternetOn():
     try:
         response=urllib2.urlopen('http://google.com.ua', timeout=1)
         return True
@@ -79,7 +80,7 @@ def updateCurrency(currency, value):
         cnx.close()
 
 if __name__ == "__main__":
-    if(internetOn() == True):
+    if(isInternetOn() == True):
         print(getValue(currency))
     else:
         print('Network connection error!')
