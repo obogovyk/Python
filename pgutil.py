@@ -49,7 +49,6 @@ class pgutil:
         self.pg_string = string.ascii_letters + self.numbers + self.symbols
 
         for x in range(0,self.count):
-            random.seed = (os.urandom(32))
             self.pg_list.append(''.join(random.choice(self.pg_string) for i in range(self.lenght)))
             
         for password in self.pg_list:
