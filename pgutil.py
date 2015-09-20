@@ -2,10 +2,9 @@
 # -*- coding: utf-8 -*-
 
 '''
-PGUtil v0.1.21
-Simple, but strong password generator utility.
-
-Copyright(C) 2015 Bogovyk Oleksandr <obogovyk@gmail.com>
+pgutil 0.1.21
+Simple password generator utility.
+Copyright(C) 2015, Bogovyk Oleksandr <obogovyk@gmail.com>
 '''
 
 import random, string
