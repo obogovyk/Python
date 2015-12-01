@@ -4,7 +4,7 @@
 '''
 pgutil 0.1.21
 Simple password generator utility.
-Copyright(C) 2015, Bogovyk Oleksandr <obogovyk@gmail.com>
+Author: Bogovyk Oleksandr <obogovyk@gmail.com>
 '''
 
 import random, string
