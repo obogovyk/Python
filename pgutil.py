@@ -1,5 +1,5 @@
 #!/usr/bin/python
-# -*- coding: utf-8 -*-
+# coding: utf-8
 
 '''
 pgutil 0.1.21
