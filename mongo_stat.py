@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-# Script for monitoring MongoDB for Zabbix Template
+# Monitoring MongoDB for Zabbix Template
 # v.0.11
 
 import sys
