@@ -37,7 +37,7 @@ class pgutil:
             self.numbers = str("")
 
         if(self.is_symbols is True):
-            self.symbols = "`~!@#$%^&*()-_=+[]{};:,<.>?"
+            self.symbols = "`~!@#$%^&*()-_=+[]{};:,.?"
         else:
             self.symbols = str("")
 
