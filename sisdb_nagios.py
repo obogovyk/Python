@@ -1,9 +1,8 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-# Python:   2.7.8
-# Author:   Oleksandr Bogovyk
-# Date:     04.11.2014
+# Python:   2.7.*/3.*
+# Modules: mysql.connector
 
 import sys
 import random
