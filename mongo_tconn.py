@@ -28,7 +28,6 @@ def extract(status, keys):
         return status
 
     key = keys.pop(0)
-
     if not key:
         return status
 
