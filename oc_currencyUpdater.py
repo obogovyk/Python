@@ -4,8 +4,6 @@
 # OpenCart currency updater script using PrivatBank API.
 # This script updates currency values and wtite them to MySQL `oc_currency` table.
 
-# Author: Oleksandr Bogovyk <obogovyk@gmail.com>
-
 import mysql.connector
 from mysql.connector import errorcode
 import sys
@@ -87,10 +85,9 @@ def updateCurrency(currency, value):
         cnx.close()
 
 if __name__ == "__main__":
-    if(isInternetOn() == True):
+    if sInternetOn():
         print(getValue(currency))
         # Add values to MySQL DB Currency Table
     else:
-        print(' Error! Please check your network connection.')
-    sys.exit(1)
-    
+        print('[Error]: Please check your network connection.')
+    sys.exit(1)    
