@@ -3,8 +3,7 @@
 
 '''
 pgutil 0.1.21
-Simple password generator utility.
-Author: Bogovyk Oleksandr <obogovyk@gmail.com>
+Description: Simple pseudo random password generator utility.
 '''
 
 import random, string
