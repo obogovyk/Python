@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 # OpenCart currency updater script using PrivatBank API.
-# This script updates currency values and wtite them to MySQL `oc_currency` table.
+# This script updates currency values and wtite them to MySQL `oc_currencies` table.
 
 import mysql.connector
 from mysql.connector import errorcode
@@ -10,26 +10,32 @@ import sys
 import urllib2
 import json
 
-''' curr_code = ['RUR','EUR','USD'] '''
-''' curr_sell = {} '''
-''' curr_buy = {} '''
+''' curr_codes = ['USD','EUR','RUR','BTC'] '''
+
+'''
+Database:
+
+oc_currencies table ->
+c_from | c_to | buy   | sell   | date       | time
+EUR      UAH    29.9    30.6     2017-03-14   14:21
+'''
 
 config = {
   'user': 'root',
   'password': '******',
   'host': '127.0.0.1',
-  'database': 'os',
+  'database': 'oc_currencies',
   'raise_on_warnings': True
 }
 
-def isInternetOn():
+def isConnectionOn():
     try:
         response=urllib2.urlopen('http://google.com.ua', timeout=1)
         return True
     except urllib2.URLError:
         return False
 
-''' TODO: Добавить цикл с валютами! '''
+''' TODO: Переделать цикл с валютами! '''
 def getValue(currency):
   # for i in curr_code
     if(currency == 'RUR'):
@@ -61,22 +67,15 @@ def updateCurrency(currency, value):
         currency_data = print data[2]['sale']
         cursor.commit()
         
-        updateCurrency()
-        '''
         #factor = ('{:.2f}').format(1 / float(currency))
         
-        query = ("SELECT firstname, lastname, email FROM users LIMIT {}".format(number))
-        cursor.execute(query)
-
-        for (firstname, lastname, email) in cursor:
-            print("{:s},{:s},{:s}").format(firstname, lastname, email)
-
         cursor.close()
         cnx.close()
-
+        '''
+        
     except mysql.connector.Error as err:
         if err.errno == errorcode.ER_ACCESS_DENIED_ERROR:
-            print("Something is wrong with your user name or password.")
+            print("Name or passwrod is incorrect.")
         elif err.errno == errorcode.ER_BAD_DB_ERROR:
             print("Database doesn't exist.")
         else:
@@ -85,8 +84,8 @@ def updateCurrency(currency, value):
         cnx.close()
 
 if __name__ == "__main__":
-    if sInternetOn():
-        print(getValue(currency))
+    if isConnectionOn():
+        # print(getValue(currency))
         # Add values to MySQL DB Currency Table
     else:
         print('[Error]: Please check your network connection.')
