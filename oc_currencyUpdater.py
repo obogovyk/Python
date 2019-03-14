@@ -16,8 +16,8 @@ import json
 Database:
 
 oc_currencies table ->
-c_from | c_to | buy   | sell   | date       | time
-EUR      UAH    29.9    30.6     2017-03-14   14:21
+r_from | r_to | buy   | sell   | date       | time
+EUR      UAH    29.9    30.6     2017-06-14   14:21:03
 '''
 
 config = {
@@ -28,7 +28,7 @@ config = {
   'raise_on_warnings': True
 }
 
-def isConnectionOn():
+def isConnection():
     try:
         response=urllib2.urlopen('http://google.com.ua', timeout=1)
         return True
@@ -84,7 +84,7 @@ def updateCurrency(currency, value):
         cnx.close()
 
 if __name__ == "__main__":
-    if isConnectionOn():
+    if isConnection():
         # print(getValue(currency))
         # Add values to MySQL DB Currency Table
     else:
