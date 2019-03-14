@@ -2,7 +2,7 @@
 # coding: utf-8
 
 '''
-pgutil 0.1.21
+pgutil 0.1
 Description: Simple pseudo random password generator utility.
 '''
 
@@ -11,7 +11,7 @@ import argparse
 import sys
 import os
 
-parser = argparse.ArgumentParser(description='Help for PGUtil v0.1.21')
+parser = argparse.ArgumentParser(description='Help for PGUtil v0.1')
 parser.add_argument('-c', '--count', type=int, default=5, choices=range(1,100), help="Password count number (5 is default)")
 parser.add_argument('-l', '--lenght', type=int, default=8, choices=range(6,16), help="Password lenght number (8 is default)")
 parser.add_argument('-n', '--numbers', action='store_true', default=False, help="Use numbers in password.")
